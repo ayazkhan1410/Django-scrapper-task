@@ -18,7 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'core',
+    'youtube',
+    'twitter',
+    'web',
     "rest_framework",
 ]
 
