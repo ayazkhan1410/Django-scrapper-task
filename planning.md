@@ -61,3 +61,59 @@
 # 35 - We also need to implement the permissions for the API's so only authenticated users can access the API's and also only the owner of the profile can manage the profile as well.
 # 36 - We also need to use the django-debug-toolbar for debugging the API's so we can easily debug the API's and also it will help us to optimize the API's as well.
 # 37 - We also need to register the models in the admin panel so we can easily manage the data in the database and also it will help us to debug the API's as well.
+
+# How i am going to desing the DB --> Updated
+# First - Since we can have multiple users which can search the same records so what i am planning to do is that i will create seperate Table like ScrapTarget which will store 
+
+# Table name: ScrapTarget
+# - URL (Unique Field)
+# - Platform (CharField)
+# - Created_at 
+# - Updated_at
+
+# Now Next Table will be related to the Profile which will looks this
+# Table name: Profile
+# - ScrapTarget (ForeignKey to ScrapTarget model)
+# - User (ForeignKey to User model)
+# - Task Status (CharField)
+# - Last Executed At (DateTimeField)
+# - Is Active (BooleanField)
+# - Created_at 
+# - Updated_at
+
+# Next table will be the scrapping data against that user
+# Next table will be the scrapping data against that user
+# Table name: Youtube Channel
+# - channel_name
+# - subscriber_count
+# - videos_count
+# - views
+# - country
+# - join_date
+# - url
+# - description
+# - Profile (FK)
+
+# Table name: Youtube Video
+# Youtube Channel (FK)
+# title
+# upload_date
+# image
+# video_duration
+# description
+# views_count
+# like_count
+# comment_count
+# link
+# transcript_language
+# transcript
+
+# Class Web
+
+# Next table will be for logs
+# Table name: ScrapLogs
+# - Profile (ForeignKey to Profile model)
+# - Log type (Info, Debug, Error, Warning)
+# - Log (CharField)
+# - Created_at
+# - Updated_at
